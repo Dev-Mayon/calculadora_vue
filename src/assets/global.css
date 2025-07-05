@@ -1,0 +1,26 @@
+/* Reset + fundo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #dff3ff; /* azul mais claro no fundo da página */
+}
+
+/* Aplicação opcional de fonte base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo para fundo da calculadora */
+.bg-calculadora {
+  background-color: #e0edff; /* azul levemente mais forte para a calculadora */
+}
+
+/* Fundo da página geral */
+.bg-externo {
+  background-color: #dff3ff;
+}

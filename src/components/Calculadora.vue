@@ -1,6 +1,15 @@
 <template>
   <div :class="[isDarkMode ? 'bg-dark text-light' : 'bg-externo']" style="min-height: 100vh;">
     <div class="container py-5">
+
+      <!-- BOTÃO DE TEMA -->
+      <button
+        class="btn btn-sm btn-outline-secondary mb-3 d-block mx-auto"
+        @click="isDarkMode = !isDarkMode"
+      >
+        {{ isDarkMode ? 'Modo Claro ☀️' : 'Modo Escuro 🌙' }}
+      </button>
+
       <transition name="fade-slide">
         <div
           v-show="mounted"
@@ -10,10 +19,26 @@
         >
           <h2 class="text-center mb-4 fw-bold">Calculadora</h2>
 
-          <input type="number" inputmode="numeric" v-model.number="num1" class="form-control mb-3" placeholder="Digite o primeiro número" />
-          <input type="number" inputmode="numeric" v-model.number="num2" class="form-control mb-3" placeholder="Digite o segundo número" />
+          <input
+            type="number"
+            inputmode="numeric"
+            v-model.number="num1"
+            class="form-control mb-3"
+            placeholder="Digite o primeiro número"
+          />
+          <input
+            type="number"
+            inputmode="numeric"
+            v-model.number="num2"
+            class="form-control mb-3"
+            placeholder="Digite o segundo número"
+          />
 
-          <select v-model="operacao" class="form-select mb-3 w-50 mx-auto" :disabled="camposVazios">
+          <select
+            v-model="operacao"
+            class="form-select mb-3 w-50 mx-auto"
+            :disabled="camposVazios"
+          >
             <option disabled value="">Escolha</option>
             <option value="+">Somar</option>
             <option value="-">Subtrair</option>
@@ -26,19 +51,38 @@
           <div v-if="historico.length" class="mt-4">
             <h5>Histórico:</h5>
             <transition-group name="fade" tag="ul" class="list-group mb-3">
-              <li v-for="(item, index) in historico" :key="item + index" class="list-group-item" :class="isDarkMode ? 'bg-dark text-light' : ''">
+              <li
+                v-for="(item, index) in historico"
+                :key="item + index"
+                class="list-group-item"
+                :class="isDarkMode ? 'bg-dark text-light' : ''"
+              >
                 {{ item }}
               </li>
             </transition-group>
 
-            <button @click="limparHistorico" class="btn btn-danger w-100" :disabled="historico.length === 0">Limpar Histórico</button>
-            <button @click="novoCalculo" class="btn btn-secondary w-100 mt-2" :disabled="camposVazios && !operacao">Novo Cálculo</button>
+            <button
+              @click="limparHistorico"
+              class="btn btn-danger w-100"
+              :disabled="historico.length === 0"
+            >
+              Limpar Histórico
+            </button>
+
+            <button
+              @click="novoCalculo"
+              class="btn btn-secondary w-100 mt-2"
+              :disabled="camposVazios && !operacao"
+            >
+              Novo Cálculo
+            </button>
           </div>
         </div>
       </transition>
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data() {

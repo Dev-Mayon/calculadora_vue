@@ -1,29 +1,45 @@
-# calculadora_vue
+# 📟 Calculadora Aritmética com Vue.js
 
-This template should help get you started developing with Vue 3 in Vite.
+Uma calculadora simples e interativa desenvolvida em **Vue.js 3**, com suporte a:
 
-## Recommended IDE Setup
+- 🧮 Operações básicas: soma, subtração, multiplicação e divisão  
+- 📜 Histórico de cálculos com animação suave  
+- 🌙 Suporte a tema escuro (modo dark)  
+- ✅ Validações (ex: divisão por zero, campos vazios)  
+- 💡 Estilo moderno com Bootstrap 5  
+- 🎬 Animação de entrada suave na calculadora  
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Customize configuration
+## 🚀 Tecnologias utilizadas
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- [Vue.js 3 (Vite)](https://vitejs.dev/)
+- [Bootstrap 5](https://getbootstrap.com/)
+- HTML5 + CSS3
 
-## Project Setup
 
-```sh
-npm install
-```
+---
 
-### Compile and Hot-Reload for Development
+## ⚙️ Funcionalidades
 
-```sh
-npm run dev
-```
+- Interface intuitiva e responsiva
+- Seleção de operação aritmética via `<select>`
+- Histórico animado com `<transition-group>`
+- Botão "Limpar Histórico"
+- Botão "Novo Cálculo"
+- Estilos alternados para tema claro e escuro com `v-bind:class`
+- Animação de entrada do card com `transition name="fade-slide"`
 
-### Compile and Minify for Production
+---
 
-```sh
-npm run build
-```
+## 📁 Estrutura do Projeto
+
+src/
+├── components/
+│ └── Calculadora.vue # Componente principal
+├── assets/
+│ └── global.css # Estilos globais personalizados
+├── App.vue
+└── main.js
+
+
